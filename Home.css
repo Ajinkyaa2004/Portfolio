@@ -1,0 +1,924 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", serif;
+}
+body {
+    background-color: #ffffff;
+}
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+
+
+
+
+
+
+
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #1a237e;
+    font-family: "IBM Plex Serif", serif;
+    z-index: 1000;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.hidden {
+    transform: translateY(-100%);
+}
+
+.scrolled {
+    background-color: #0d1337; /* Slightly darker on scroll */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo styling */
+.logo {
+    color: #e7e7e7;
+    font-size: 25px;
+    font-weight: bold;
+    transition: transform 0.3s ease, letter-spacing 0.3s ease;
+    font-family: "Birthstone", cursive;
+}
+
+.scrolled .logo {
+    transform: scale(1.2);
+    letter-spacing: 2px;
+}
+
+/* Navbar link styling */
+.nav a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    padding: 5px 0;
+    transition: color 0.4s ease, transform 0.3s ease;
+    overflow: hidden;
+}
+
+/* Gradient underline effect */
+.nav a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ffffff, #ffffff, #ffffff, #ffffff);
+    transition: width 0.4s ease, left 0.4s ease;
+    border-radius: 2px;
+}
+
+/* Hover effect for color and underline */
+.nav a:hover {
+    color: #d5d6e1; /* Glowing text effect */
+}
+
+.nav a:hover::before {
+    width: 100%;
+    left: 0;
+    box-shadow: 0 0 8px rgb(1, 37, 154); /* Soft glow shadow */
+}
+
+/* Scrolled effect for links */
+.scrolled .nav a {
+    transform: translateY(-2px);
+}
+
+/* Active link styling */
+.nav a.active {
+    color: #d5d6e1; /* Glowing text effect */
+    font-weight: bold;
+}
+
+.nav a.active::before {
+    width: 100%;
+    left: 0;
+    box-shadow: 0 0 8px rgb(1, 37, 154); /* Soft glow shadow */
+}
+
+
+/* Hover effect for color and underline */
+.nav a:hover {
+    color: #d5d6e1; /* Glowing text effect */
+}
+
+.nav a:hover::before {
+    width: 100%;
+    left: 0;
+    box-shadow: 0 0 8px rgb(1, 37, 154); /* Soft glow shadow */
+}
+
+/* Scrolled effect for links */
+.scrolled .nav a {
+    transform: translateY(-2px);
+}
+/* General styles */
+.hamburger,
+.close-btn {
+    display: none; /* Initially hide both icons */
+}
+
+
+
+
+
+
+
+
+
+.main {
+    height: 100vh; /* Adjust height for scrolling */
+    background-image: url('Images/Design1.jpeg'); /* Smooth gradient background */
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    padding: 50px 0; /* Reduced top and bottom spacing */
+}
+
+/* Card Styling */
+.card {
+    background-color: white;
+    width: 800px;
+    height: 400px;
+    display: flex;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    animation: float 4s ease-in-out infinite;
+    margin: 0 auto; /* Ensure proper centering */
+}
+
+/* Hover Effect */
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Card Image Styling */
+.card-image {
+    width: 50%;
+    background-image: url('Images/Designer.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/* Card Content Styling */
+.card-content {
+    width: 50%;
+    padding: 40px;
+}
+
+.card-title {
+    font-size: 20px;
+    color: #1a237e;
+    margin-bottom: 5px;
+    font-family: "IBM Plex Serif", serif;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    margin-left: 100px;
+}
+
+.card-info {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+.card-info-label {
+    font-weight: bold;
+    color: #1a237e;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+.social-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #1a237e;
+    padding: 1px 0;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    color: #ffffff;
+    font-size: 30px;
+    font-family: "IBM Plex Serif", serif;
+   
+}
+.social-bar .fa-instagram:hover{
+    transition:0.5s ease;
+    color: #ff00dd;
+    transform:scale(1.1);  
+}
+.social-bar .fa-linkedin:hover{
+    transition:0.5s ease;
+    color: #0062ff;
+    transform:scale(1.1);  
+}
+.social-bar .fa-youtube:hover{
+    transition:0.5s ease;
+    color: #ff0000;
+    transform:scale(1.1);  
+}
+.social-bar .fa-facebook:hover{
+    transition:0.5s ease;
+    color: #004cff;
+    transform:scale(1.1);  
+}
+
+.greeting {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 24px;
+    color: #1a237e;
+}
+
+
+
+
+
+
+
+
+
+
+.intro {
+    text-align: center;
+    padding: 40px;
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: 50px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.intro h1 {
+    font-size: 32px;
+    color: #333;
+    font-family: "IBM Plex Serif", serif;
+}
+
+.intro p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 20px;
+    font-family: "IBM Plex Serif", serif;
+}
+
+/* Animation states */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 100px;
+    font-family: "IBM Plex Serif", serif;
+    font-weight: bold;
+}
+
+.education-list {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.education-item {
+    display: grid;
+    grid-template-columns: 250px 20px 1fr;
+    gap: 20px;
+    margin-bottom: 120px;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-100px); /* Slide in from the left */
+    transition: all 0.8s ease-out;
+}
+
+.education-item.visible {
+    opacity: 1; /* Fade in */
+    transform: translateX(0); /* Slide to original position */
+}
+
+.left-side {
+    text-align: right;
+}
+
+.year {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-family: "IBM Plex Serif", serif;
+    color: #1a237e;
+}
+
+.degree {
+    font-family: "IBM Plex Serif", serif;
+    font-size: 20px;
+    color: #1a237e;
+}
+
+.bullet-point {
+    width: 6px;
+    height: 6px;
+    background-color: #1a237e;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.right-side {
+    padding-top: 2px;
+}
+
+.school {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-family: "IBM Plex Serif", serif;
+    color: #1a237e;
+    font-weight: bold;
+}
+
+.description {
+    color: #666;
+    line-height: 1.9;
+    font-size: 18px;
+    max-width: 600px;
+    font-family: "IBM Plex Serif", serif;
+}
+
+
+
+
+
+
+
+
+
+/* General Section Styling */
+.section {
+    padding: 40px 20px;
+    text-align: center;
+    font-family: "IBM Plex Serif", serif;
+    font-size: 32px;
+   
+}
+.section h2{
+    font-size: 32px;
+
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-family: "IBM Plex Serif", serif;
+    color: #f5f5f5;
+    text-transform: uppercase;
+}
+
+/* Skills Section */
+.skills {
+    background: radial-gradient(circle, #3949ab 60%, #1a237e 100%);
+    position: relative;
+    color: white;
+    overflow: hidden;
+    padding: 40px 20px;
+}
+
+/* Subtle dotted overlay (brighter) */
+.skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.2;
+    pointer-events: none;
+    border-radius: 10px;
+    z-index: 0;
+}
+
+/* Skills container layout */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Spacing between items */
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Skill Item */
+.skill {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    width: calc(50% - 10px); /* Two columns */
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 20px;
+    opacity: 0; /* For animation */
+    transform: translateY(30px); /* Slide in from below */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.skill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.2), rgba(0,0,0,0.2));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.skill:hover::after {
+    opacity: 1;
+}
+
+/* Skill Content */
+.skill-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #ffcc00;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    
+    color: #ffffff;
+}
+
+
+.skill:hover .skill-icon {
+   /* Brighter background on hover */
+    transform: translateY(-10px) scale(1.05); /* Lift and slightly enlarge */
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+    border-radius: 20px;
+}
+.skill:hover p {
+    color: #ffcc00; /* Highlight the text with a golden accent */
+    transition: color 0.3s ease;
+    border-radius: 20px;
+}
+/* Visible Class for Animation */
+.skill.visible {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Slide into place */
+}
+/* Category Title Styling */
+.category-title {
+    font-size: 20px;
+    margin: 20px 0;
+    font-family: "IBM Plex Serif", serif;
+    color: #ffcc00;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Add a line below each category title */
+.category-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ffcc00;
+    margin: 8px auto 0;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Expertise Section */
+.expertise-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 200px;
+}
+
+.expertise .section-title {
+    font-size: 32px;  /* Increase the font size */
+    color: #000000;   /* Set the title color to something bright like gold */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: "IBM Plex Serif", serif;
+    text-align: center;  /* Ensure the text is centered */
+    padding-top: 20px;   /* Add some space at the top */
+}
+
+.expertise-item {
+    width: calc(33.33% - 27px);
+    max-width: 300px;
+    opacity: 0; /* Start invisible */
+    transform: translateY(50px); /* Slide up */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth animation */
+}
+
+.expertise-item.visible {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Slide to position */
+}
+
+.expertise-title {
+    font-weight: bold;
+   margin-top: 100px;
+    font-family: "IBM Plex Serif", serif;
+    font-size: 23px;
+}
+.expertise-description {
+    font-size: 17px;
+    font-family: "IBM Plex Serif", serif;
+    color: #666;
+    line-height: 1.5;
+}
+.section .p{
+    font-size: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* For smaller screens (e.g., 428x926) */
+@media screen and (max-width: 428px) {
+    main {
+        background-image: url('Images/Design1.jpeg');
+        background-size: cover; /* Ensures the image covers the entire screen */
+        background-position: center center; /* Centers the image */
+        background-repeat: no-repeat;
+        height: 100vh; /* Ensures the background covers the full viewport height */
+    }
+    .hamburger {
+        display: block; /* Show hamburger menu on small screens */
+        font-size: 30px;
+        position: fixed;
+        top: 20px;
+        right: 20px; /* Keep hamburger at the right */
+        cursor: pointer;
+        z-index: 1001; /* Ensure it’s above other elements */
+    }
+
+    .close-btn {
+        display: none; /* Hide close button initially */
+        font-size: 30px;
+        position: fixed;
+        top: 20px;
+        right: 20px; /* Keep close button at the right */
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .nav {
+        display: none; /* Hide the nav links by default */
+        flex-direction: column; /* Make nav links stack vertically */
+        background-color: #1a237e; /* Match your navbar color */
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        padding: 50px 20px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav.active {
+        display: flex; /* Show nav links when active */
+        transform: translateX(0); /* Slide into view */
+    }
+
+    /* When navbar is active, show close button */
+    .nav.active + .close-btn {
+        display: block; /* Show close button when menu is active */
+    }
+
+    /* Hide hamburger button when menu is open */
+    .nav.active + .close-btn + .hamburger {
+        display: none; /* Hide hamburger button when menu is active */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Query for 428x926 Devices */
+@media only screen and (max-width: 428px) and (max-height: 926px) {
+    /* Main Section */
+    .main {
+        flex-direction: column;
+        padding: 20px; /* Reduce padding for better fit */
+    }
+
+    /* Card Styling */
+    .card {
+        flex-direction: column; /* Stack content vertically */
+        width: 100%; /* Full width */
+        height: auto; /* Auto height to fit content */
+        margin: 20px 0;
+    }
+
+    /* Card Image Styling */
+    .card-image {
+        width: 100%; /* Full width */
+        height: 200px; /* Adjust height */
+        border-radius: 10px 10px 0 0; /* Rounded corners at top */
+    }
+
+    /* Card Content Styling */
+    .card-content {
+        width: 100%;
+        padding: 20px; /* Adjust padding */
+        text-align: center; /* Center-align text */
+    }
+
+    .card-title {
+        font-size: 18px; /* Adjust font size */
+        font-family: "IBM Plex Serif", serif;
+    }
+
+    .card-subtitle {
+        font-size: 14px;
+        font-family: "IBM Plex Serif", serif;
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .card-info {
+        font-size: 12px; /* Adjust font size */
+        font-family: "IBM Plex Serif", serif;
+        margin-bottom: 10px;
+    }
+
+    .card-info-label {
+        font-family: "IBM Plex Serif", serif;
+        font-size: 13px;
+    }
+
+    /* Greeting Styling */
+    .greeting {
+        font-size: 20px; /* Smaller font size */
+        font-family: "IBM Plex Serif", serif;
+        bottom: 110px; /* Adjust position */
+    }
+
+    /* Social Bar */
+    .social-bar {
+        flex-wrap: wrap; /* Wrap icons if needed */
+        gap: 20px; /* Reduce gap between icons */
+        font-family: "IBM Plex Serif", serif;
+        font-size: 24px; /* Reduce icon size */
+        padding: 10px; /* Adjust padding */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Media Query for 428x926 Devices */
+@media only screen and (max-width: 428px) and (max-height: 926px) {
+    .container {
+        padding: 40px 15px; /* Reduce padding for smaller screens */
+    }
+
+    .title {
+        font-size: 24px; /* Adjust title size */
+        margin-bottom: 50px; /* Reduce space below title */
+        font-family: "IBM Plex Serif", serif;
+    }
+
+    .education-list {
+        max-width: 100%; /* Full width */
+    }
+
+    .education-item {
+        grid-template-columns: 1fr; /* Single-column layout */
+        gap: 10px; /* Adjust spacing */
+        margin-bottom: 50px; /* Reduce spacing between items */
+        text-align: center; /* Center-align content */
+    }
+
+    .left-side {
+        text-align: center; /* Center-align year and degree */
+    }
+
+    /* Move Year and Degree */
+    .year, 
+    .degree {
+        margin-bottom: 5px; /* Reduce space */
+        font-family: "IBM Plex Serif", serif;
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .degree {
+        font-size: 16px; /* Slightly larger than year */
+        font-family: "IBM Plex Serif", serif;
+        font-weight: bold;
+    }
+
+    .right-side {
+        padding-top: 0; /* Remove padding */
+    }
+
+    /* Adjust School and Description */
+    .school {
+        font-size: 18px; /* Adjust size */
+        margin-bottom: 10px; /* Reduce margin */
+        font-family: "IBM Plex Serif", serif;
+    }
+
+    .description {
+        font-size: 14px; /* Reduce font size */
+        line-height: 1.6; /* Adjust line height */
+        font-family: "IBM Plex Serif", serif;
+        max-width: 100%; /* Full width */
+    }
+
+    /* Adjust Bullet Point */
+    .bullet-point {
+        display: none; /* Hide bullet points on smaller screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Media query for 428x926 screen size with animation */
+@media (max-width: 428px) {
+    .expertise-container {
+        display: flex;
+        flex-direction: column; /* Vertical layout */
+        align-items: center; /* Center alignment */
+        gap: 20px; /* Add spacing */
+        margin-bottom: 50px;
+    }
+
+    .expertise-item {
+        width: 100%; /* Full width */
+        max-width: 380px;
+        margin-bottom: 20px;
+        opacity: 0; /* Start invisible */
+        transform: translateY(30px); /* Slight slide-in from below */
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    /* Animation when visible */
+    .expertise-item.visible {
+        opacity: 1; /* Fade in */
+        transform: translateY(0); /* Slide to original position */
+    }
+
+    .expertise-title {
+        font-size: 20px;
+        text-align: center;
+        font-family: "IBM Plex Serif", serif;
+        color: #1a237e;
+        
+
+    }
+
+    .expertise-description {
+        font-size: 15px;
+        font-family: "IBM Plex Serif", serif;
+        text-align: justify;
+        line-height: 1.6;
+    }
+
+    .section-title {
+        font-size: 20px;
+        font-family: "IBM Plex Serif", serif;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

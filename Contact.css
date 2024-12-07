@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", serif;
+}
+body {
+    background-color: #f5f5f5;
+}
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #1a237e;
+    font-family: "IBM Plex Serif", serif;
+    z-index: 1000;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.hidden {
+    transform: translateY(-100%);
+}
+
+.scrolled {
+    background-color: #0d1337; /* Slightly darker on scroll */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo styling */
+.logo {
+    color: #e7e7e7;
+    font-size: 25px;
+    font-weight: bold;
+    transition: transform 0.3s ease, letter-spacing 0.3s ease;
+    font-family: "Birthstone", cursive;
+}
+
+.scrolled .logo {
+    transform: scale(1.2);
+    letter-spacing: 2px;
+}
+
+/* Navbar link styling */
+.nav a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    padding: 5px 0;
+    transition: color 0.4s ease, transform 0.3s ease;
+    overflow: hidden;
+}
+
+/* Gradient underline effect */
+.nav a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ffffff, #ffffff, #ffffff, #ffffff);
+    transition: width 0.4s ease, left 0.4s ease;
+    border-radius: 2px;
+}
+
+/* Hover effect for color and underline */
+.nav a:hover {
+    color: #d5d6e1; /* Glowing text effect */
+}
+
+.nav a:hover::before {
+    width: 100%;
+    left: 0;
+    box-shadow: 0 0 8px rgb(1, 37, 154); /* Soft glow shadow */
+}
+
+/* Scrolled effect for links */
+.scrolled .nav a {
+    transform: translateY(-2px);
+}
+
+/* Active link styling */
+.nav a.active {
+    color: #d5d6e1; /* Glowing text effect */
+    font-weight: bold;
+}
+
+.nav a.active::before {
+    width: 100%;
+    left: 0;
+    box-shadow: 0 0 8px rgb(1, 37, 154); /* Soft glow shadow */
+}
+
+
+/* Hover effect for color and underline */
+.nav a:hover {
+    color: #d5d6e1; /* Glowing text effect */
+}
+
+.nav a:hover::before {
+    width: 100%;
+    left: 0;
+    box-shadow: 0 0 8px rgb(1, 37, 154); /* Soft glow shadow */
+}
+
+/* Scrolled effect for links */
+.scrolled .nav a {
+    transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+
+
+.container{
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    margin: 20px auto;
+    margin-top: 23px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1400px;
+    height: 800px;
+    margin-bottom: 200px;
+}
+.p h1{
+    margin-top: 130px;
+    text-align: center;
+    font-family: "IBM Plex Serif", serif;
+    color: #162264;
+
+}
+.contact-info h2{
+    font-family: "IBM Plex Serif", serif;
+    font-size: 33px;
+    font-style: bold;
+    color:rgb(1, 37, 154);
+}
+.contact-info p{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Roboto Mono", serif;
+    margin-left: 200px;
+    margin-top: 10px;
+}
+form {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(245, 247, 250, 0.7);
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border-color: #01379a;
+    box-shadow: 0 0 10px rgba(1, 55, 154, 0.3);
+}
+
+textarea {
+    resize: none;
+    min-height: 120px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ffffff;
+    color: rgb(1, 37, 154);
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(1, 37, 154, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(1, 37, 154);
+    color: #ffffff;
+}
+
+
+
+.error {
+    font-size: 0.875rem;
+    color: red;
+    margin-top: 0.25rem;
+    visibility: hidden;
+}
+
+/* Input Hover Effect */
+input:hover, textarea:hover {
+    background: rgba(245, 247, 250, 1);
+}
+
+/* Optional Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.info {
+    margin-top: 30px;
+    display: flex;
+    margin-left: 1000px;
+}
+
+.AllInfo {
+    margin-top: -400px;
+}
+
+.connect {
+    margin-left: 830px;
+    margin-top: 29px;
+}
+
+.social-bar h3 {
+    font-size: 17px;
+    margin-left: -10px;
+}
+
+.social-bar {
+    margin-left: 1200px;
+    font-size: 25px;
+    margin-top: -30px;
+    letter-spacing: 2px;
+}
+
+.social-bar .fa-instagram {
+    color: #ff00d9;
+    text-decoration: none;
+}
+
+.social-bar .fa-instagram:hover {
+    transition: 0.5s ease;
+    cursor: pointer;
+    color: #ff00d9;
+    transform: scale(1.3);
+    text-decoration: none;
+}
+
+.social-bar .fa-x-twitter {
+    color: #000000;
+    text-decoration: none;
+}
+
+.social-bar .fa-x-twitter:hover {
+    transition: 0.5s ease;
+    cursor: pointer;
+    color: #000000;
+    transform: scale(1.3);
+    text-decoration: none;
+}
+
+.social-bar .fa-youtube {
+    color: red;
+    text-decoration: none;
+}
+
+.social-bar .fa-youtube:hover {
+    transition: 0.5s ease;
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+.social-bar .fa-linkedin {
+    color: #0022ff;
+    text-decoration: none;
+}
+
+.social-bar .fa-linkedin:hover {
+    transition: 0.5s ease;
+    color: #0022ff;
+    transform: scale(1.3);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Q{
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 250px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General styles */
+.hamburger,
+.close-btn {
+    display: none; /* Initially hide both icons */
+}
+/* For smaller screens (e.g., 428x926) */
+@media screen and (max-width: 428px) {
+    .hamburger {
+        display: block; /* Show hamburger menu on small screens */
+        font-size: 30px;
+        position: fixed;
+        top: 20px;
+        right: 20px; /* Keep hamburger at the right */
+        cursor: pointer;
+        z-index: 1001; /* Ensure it’s above other elements */
+    }
+
+    .close-btn {
+        display: none; /* Hide close button initially */
+        font-size: 30px;
+        position: fixed;
+        top: 20px;
+        right: 20px; /* Keep close button at the right */
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .nav {
+        display: none; /* Hide the nav links by default */
+        flex-direction: column; /* Make nav links stack vertically */
+        background-color: #1a237e; /* Match your navbar color */
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        padding: 50px 20px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav.active {
+        display: flex; /* Show nav links when active */
+        transform: translateX(0); /* Slide into view */
+    }
+
+    /* When navbar is active, show close button */
+    .nav.active + .close-btn {
+        display: block; /* Show close button when menu is active */
+    }
+
+    /* Hide hamburger button when menu is open */
+    .nav.active + .close-btn + .hamburger {
+        display: none; /* Hide hamburger button when menu is active */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 428px) and (max-height: 926px) {
+    /* Adjust container layout for smaller screens */
+    .container {
+        padding: 20px;
+        background-color: #ffffff;
+        margin: 10px auto;
+        height: auto; /* Flexible height for small screens */
+        box-shadow: none; /* Optional: Simplify shadows for mobile */
+    }
+
+    /* Ensure the form appears first and is centered */
+    form#contactForm {
+        max-width: 90%; /* Fit within screen width */
+        margin: 20px auto; /* Center on the page */
+        padding: 1.5rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Mobile-friendly shadow */
+    }
+    .contact-info p{
+        margin-left: 10px;
+    }
+
+    /* Stack .info section vertically and center it */
+    .info {
+        display: block;
+        margin: 20px auto;
+        text-align: center; /* Center-align content */
+    }
+
+    .AllInfo {
+        margin: 20px 0;
+        text-align: center; /* Center the text */
+    }
+
+    .connect {
+        margin: 20px auto;
+        text-align: center; /* Align buttons/icons centrally */
+    }
+
+    /* Align social-bar items in the center */
+    .social-bar {
+        display: flex;
+        flex-wrap: wrap; /* Wrap icons to the next line if needed */
+        justify-content: center; /* Center-align all icons */
+        margin: 20px auto;
+    }
+
+    .social-bar h3 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .social-bar .fa-instagram,
+    .social-bar .fa-facebook,
+    .social-bar .fa-youtube,
+    .social-bar .fa-linkedin {
+        font-size: 18px; /* Adjust icon size */
+        margin: 5px 10px; /* Space between icons */
+    }
+
+    /* Adjust footer text spacing */
+    .Q {
+        font-size: 12px; /* Slightly increase font size for readability */
+        margin: 20px auto;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+

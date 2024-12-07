@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get In Touch</title>
+  <link rel="stylesheet" type="text/css" href="Contact.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a964bfb21f.js" crossorigin="anonymous"></script>
+  <input type="hidden" name="access_key" value="06a058d0-1cd3-4f0f-9533-4823f56cb029">
+</head>
+
+<body>
+    <header id="header" class="header">
+        <div class="logo">Ajinkya Dhumal</div>
+        <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+        <div class="close-btn">&times;</div> <!-- Close button -->
+        <nav class="nav">
+            <a href="Home.html" class="active">ABOUT ME</a>
+            <a href="Home.html#education">EDUCATION</a> <!-- Updated link -->
+            <a href="Home.html#Skills">SKILLS</a>
+            <a href="Project.html">PROJECTS</a>
+            <a href="Achievements.html">ACHIEVEMENTS</a>
+            <a href="Contact.html">CONTACT</a>
+           
+        </nav>
+    </header>
+    
+    
+    
+    
+    <script>
+        // JavaScript to add the active class to the current page link
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split("/").pop(); // Get the current page filename
+            const navLinks = document.querySelectorAll('.nav a');
+    
+            navLinks.forEach(link => {
+                // Remove 'active' class from all links
+                link.classList.remove('active');
+                
+                // Add 'active' class to the current page link
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+    
+    <script>
+       let lastScrollY = window.scrollY;
+    
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('header');
+    
+        if (window.scrollY > lastScrollY) {
+            // Scrolling down
+            header.classList.add('hidden');
+        } else {
+            // Scrolling up
+            header.classList.remove('hidden');
+        }
+    
+        if (window.scrollY > 50) {
+            // Add scrolled effect
+            header.classList.add('scrolled');
+        } else {
+            // Remove scrolled effect
+            header.classList.remove('scrolled');
+        }
+    
+        lastScrollY = window.scrollY;
+    });
+    
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.hamburger');
+        const closeBtn = document.querySelector('.close-btn');
+        const nav = document.querySelector('.nav');
+    
+        // Open menu
+        hamburger.addEventListener('click', () => {
+            nav.classList.add('active');
+            hamburger.style.display = 'none';
+            closeBtn.style.display = 'block';
+        });
+    
+        // Close menu
+        closeBtn.addEventListener('click', () => {
+            nav.classList.remove('active');
+            hamburger.style.display = 'block';
+            closeBtn.style.display = 'none';
+        });
+    
+        // Ensure correct visibility on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 428) {
+                nav.classList.remove('active'); // Always show menu on larger screens
+                hamburger.style.display = 'none';
+                closeBtn.style.display = 'none';
+            } else {
+                hamburger.style.display = 'block'; // Show hamburger on smaller screens
+                closeBtn.style.display = 'none';
+            }
+        });
+    });
+    
+    </script>
+
+
+
+<div class="p">
+    <h1>INITIATE &nbsp CONTACT!</h1>
+</div>
+    <div class="container">
+       
+        <div class="content">
+            
+            <div class="contact-info">
+                <h2>Ajinkya Dhumal</h2>
+                <p class="subtitle">Web Developer.</p>
+            </div>
+          
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="06a058d0-1cd3-4f0f-9533-4823f56cb029">
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" name="firstName" required>
+                    <span class="error" id="firstNameError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" name="lastName" required>
+                    <span class="error" id="lastNameError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" name="email" required>
+                    <span class="error" id="emailError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="message">Type your message here... *</label>
+                    <textarea name="message" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            
+            
+              <div class="AllInfo"></div>
+                <div class="info">
+                    <p><strong>Phone:&nbsp</strong></p>
+                    <p> +91-9004933771.</p>
+                </div>
+                <div class="info">
+                    <p><strong>Email: &nbsp</strong></p>
+                    <p>dhumalajinkya2004@gmail.com</p>
+                </div>
+                <div class="info">
+                  <p><strong>Address:&nbsp</strong></p>
+                  <p>Yelahanka,Bengaluru, India.</p>
+                </div>
+              </div>  
+              <div class="connect">
+                <h3>Connect With Me:- </h3>
+              </div>
+                <div class="social-bar">
+                    <a href="https://www.instagram.com/ajinkya_dhumal_/profilecard/?igsh=dXVpaWFqZjZta2Ux" target="_blank" >
+                        <i class="fa-brands fa-instagram"></i></a>  
+                    <a href="https://youtube.com/@ajinkyadhumal2004?si=-wiepTpyoBrUHUhE" target="_blank">   
+                         <i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://x.com/itsajinkya_" target="_blank">
+                        <i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/ajinkya-dhumal-8ba616289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i> </a>
+                </div>
+        </div>
+    </div>
+    <div class="Q">
+        <p><-- All Rights Reserved @ Ajinkya-Dhumal --> <br>
+           <-- HTML - CSS - JAVASCRIPT -->
+        </p>
+      </div>
+
+
+
+
+
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contactForm');
+    const fields = {
+        firstName: document.getElementById('firstName'),
+        lastName: document.getElementById('lastName'),
+        email: document.getElementById('email'),
+        message: document.getElementById('message')
+    };
+    const errors = {
+        firstName: document.getElementById('firstNameError'),
+        lastName: document.getElementById('lastNameError'),
+        email: document.getElementById('emailError')
+    };
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Reset error messages
+        Object.values(errors).forEach(error => (error.textContent = ''));
+        // Validate fields
+        if (!fields.firstName.value.trim()) {
+            errors.firstName.textContent = 'Enter a first name.';
+            return;
+        }
+        if (!fields.lastName.value.trim()) {
+            errors.lastName.textContent = 'Enter a last name.';
+            return;
+        }
+        if (!fields.email.value.trim() || !isValidEmail(fields.email.value)) {
+            errors.email.textContent = 'Enter a valid email.';
+            return;
+        }
+        // Log submitted data
+        console.log('Form submitted:', {
+            firstName: fields.firstName.value,
+            lastName: fields.lastName.value,
+            email: fields.email.value,
+            message: fields.message.value
+        });
+        alert('Form submitted successfully!');
+        form.reset();
+    });
+    const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+});
+</script>
+
+
+
+  
+</body>
+</html>

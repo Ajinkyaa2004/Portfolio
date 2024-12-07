@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "IBM Plex Serif", serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+
+
+
+
+
+
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #1a237e;
+    font-family: "IBM Plex Serif", serif;
+    z-index: 1000;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.hidden {
+    transform: translateY(-100%);
+}
+
+.scrolled {
+    background-color: #0d1337; /* Slightly darker on scroll */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo styling */
+.logo {
+    color: #e7e7e7;
+    font-size: 25px;
+    font-weight: bold;
+    transition: transform 0.3s ease, letter-spacing 0.3s ease;
+    font-family: "Birthstone", cursive;
+}
+
+.scrolled .logo {
+    transform: scale(1.2);
+    letter-spacing: 2px;
+}
+
+/* Navbar link styling */
+.nav a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    padding: 5px 0;
+    transition: color 0.4s ease, transform 0.3s ease;
+    overflow: hidden;
+}
+
+/* Gradient underline effect */
+.nav a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ffffff, #ffffff, #ffffff, #ffffff);
+    transition: width 0.4s ease, left 0.4s ease;
+    border-radius: 2px;
+}
+
+/* Hover effect for color and underline */
+.nav a:hover {
+    color: #d5d6e1; /* Glowing text effect */
+}
+
+.nav a:hover::before {
+    width: 100%;
+    left: 0;
+    box-shadow: 0 0 8px rgb(1, 37, 154); /* Soft glow shadow */
+}
+
+/* Scrolled effect for links */
+.scrolled .nav a {
+    transform: translateY(-2px);
+}
+
+/* Active link styling */
+.nav a.active {
+    color: #d5d6e1; /* Glowing text effect */
+    font-weight: bold;
+}
+
+.nav a.active::before {
+    width: 100%;
+    left: 0;
+    box-shadow: 0 0 8px rgb(1, 37, 154); /* Soft glow shadow */
+}
+
+
+/* Hover effect for color and underline */
+.nav a:hover {
+    color: #d5d6e1; /* Glowing text effect */
+}
+
+.nav a:hover::before {
+    width: 100%;
+    left: 0;
+    box-shadow: 0 0 8px rgb(1, 37, 154); /* Soft glow shadow */
+}
+
+/* Scrolled effect for links */
+.scrolled .nav a {
+    transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+
+
+.certificates-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1400px;
+    height: 600px;
+    
+  }
+  
+  #head h1{
+    font-size: 32px;
+    margin-top: 130px;
+    text-align: center;
+    font-family: "IBM Plex Serif", serif;
+    color: #162264;
+  }
+  
+  .certificate-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .certificate-card {
+    position: relative;
+    width: 350px;
+    height: 250px;
+    background: linear-gradient(135deg, rgba(1, 37, 154, 0.1), #ffffff);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(1, 37, 154, 0.2);
+    overflow: hidden;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  /* Static Description */
+  .certificate-card .static-description {
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    color: rgba(1, 37, 154, 0.8);
+    position: absolute;
+    top: 20px;  /* Adjust as needed */
+    width: 100%;
+    background: transparent;
+    font-weight: normal;
+  }
+  
+  /* Hover and animation effects */
+  .certificate-card.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .certificate-card:hover {
+    box-shadow: 0 15px 30px rgba(1, 37, 154, 0.3);
+    transform: translateY(-5px);
+  }
+  
+  .certificate-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: transform 0.5s ease, filter 0.5s ease;
+  }
+  
+  .certificate-card:hover img {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+  }
+  
+  /* Certificate Details */
+  .certificate-card .certificate-details {
+    padding: 20px;
+    text-align: center;
+    background: rgba(1, 37, 154, 0.8);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .certificate-card:hover .certificate-details {
+    transform: translateY(0);
+  }
+  
+  /* Overlay */
+  .certificate-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 37, 154, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
+  .certificate-card:hover .certificate-overlay {
+    opacity: 1;
+  }
+  
+  .certificate-overlay button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #ffffff;
+    color: rgb(1, 37, 154);
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(1, 37, 154, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+   
+  .certificate-overlay button:hover {
+    background-color: rgb(1, 37, 154);
+    color: #ffffff;
+  }
+  .p{
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 250px;
+}
+  
+  
+  
+  
+
+
+
+
+
+body {
+    background-image: url('Images/image1_after.jpg');
+    background-size: cover;      /* Makes the image cover the entire screen */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* General styles */
+.hamburger,
+.close-btn {
+    display: none; /* Initially hide both icons */
+}
+
+/* For smaller screens (e.g., 428x926) */
+@media screen and (max-width: 428px) {
+    .hamburger {
+        display: block; /* Show hamburger menu on small screens */
+        font-size: 30px;
+        position: fixed;
+        top: 20px;
+        right: 20px; /* Keep hamburger at the right */
+        cursor: pointer;
+        z-index: 1001; /* Ensure it’s above other elements */
+    }
+
+    .close-btn {
+        display: none; /* Hide close button initially */
+        font-size: 30px;
+        position: fixed;
+        top: 20px;
+        right: 20px; /* Keep close button at the right */
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .nav {
+        display: none; /* Hide the nav links by default */
+        flex-direction: column; /* Make nav links stack vertically */
+        background-color: #1a237e; /* Match your navbar color */
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        padding: 50px 20px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav.active {
+        display: flex; /* Show nav links when active */
+        transform: translateX(0); /* Slide into view */
+    }
+
+    /* When navbar is active, show close button */
+    .nav.active + .close-btn {
+        display: block; /* Show close button when menu is active */
+    }
+
+    /* Hide hamburger button when menu is open */
+    .nav.active + .close-btn + .hamburger {
+        display: none; /* Hide hamburger button when menu is active */
+    }
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 428px) {
+   
+
+    .certificates-section {
+        padding: 20px 10px;
+        margin-top: 20px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .p h1 {
+        font-size: 28px; /* Slightly smaller title for small screens */
+        margin-top: 80px; /* Adjust for better alignment */
+        color: #162264;
+    }
+
+    .certificate-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly; /* Space cards evenly */
+        gap: 15px;
+    }
+
+    .certificate-card {
+        width: 100%; /* Full width for smaller screens */
+        max-width: 320px; /* Limit width to maintain balance */
+        height: 220px; /* Adjust height for better fit */
+        margin-bottom: 15px; /* Reduced margin */
+        transform: translateY(0); /* Ensure visible on load */
+        box-shadow: 0 8px 15px rgba(1, 37, 154, 0.2); /* Slightly reduced shadow */
+    }
+
+    .certificate-card .static-description {
+        font-size: 14px; /* Smaller font for description */
+        padding: 10px;
+        color: rgba(1, 37, 154, 0.7);
+    }
+
+    .certificate-card .certificate-details {
+        padding: 10px;
+        font-size: 14px; /* Smaller font for details */
+    }
+
+    .certificate-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .certificate-overlay button {
+        padding: 6px 12px;
+        font-size: 14px; /* Smaller button font */
+    }
+}

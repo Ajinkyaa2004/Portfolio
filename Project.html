@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajinkya's Projects</title>
+    <link rel="stylesheet" type="text/css" href="Project.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a964bfb21f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header id="header" class="header">
+        <div class="logo">Ajinkya Dhumal</div>
+        <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+        <div class="close-btn">&times;</div> <!-- Close button -->
+        <nav class="nav">
+            <a href="Home.html" class="active">ABOUT ME</a>
+            <a href="Home.html#education">EDUCATION</a> <!-- Updated link -->
+            <a href="Home.html#Skills">SKILLS</a>
+            <a href="Project.html">PROJECTS</a>
+            <a href="Achievements.html">ACHIEVEMENTS</a>
+            <a href="Contact.html">CONTACT</a>
+           
+        </nav>
+    </header>
+
+    <script>
+        // JavaScript to add the active class to the current page link
+        document.addEventListener('DOMContentLoaded', function () {
+    const currentPage = window.location.pathname.split("/").pop(); // Get the current page filename
+    const navLinks = document.querySelectorAll('.nav a');
+
+    navLinks.forEach(link => {
+        // Remove 'active' class from all links
+        link.classList.remove('active');
+        
+        // Add 'active' class to the current page link
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+});
+    </script>
+    
+    <script>
+        let lastScrollY = window.scrollY;
+     
+     window.addEventListener('scroll', () => {
+         const header = document.getElementById('header');
+     
+         if (window.scrollY > lastScrollY) {
+             // Scrolling down
+             header.classList.add('hidden');
+         } else {
+             // Scrolling up
+             header.classList.remove('hidden');
+         }
+     
+         if (window.scrollY > 50) {
+             // Add scrolled effect
+             header.classList.add('scrolled');
+         } else {
+             // Remove scrolled effect
+             header.classList.remove('scrolled');
+         }
+     
+         lastScrollY = window.scrollY;
+     });
+     </script>
+
+     <script>
+       document.addEventListener('DOMContentLoaded', () => {
+         const hamburger = document.querySelector('.hamburger');
+         const closeBtn = document.querySelector('.close-btn');
+         const nav = document.querySelector('.nav');
+     
+         // Open menu
+         hamburger.addEventListener('click', () => {
+             nav.classList.add('active');
+             hamburger.style.display = 'none';
+             closeBtn.style.display = 'block';
+         });
+     
+         // Close menu
+         closeBtn.addEventListener('click', () => {
+             nav.classList.remove('active');
+             hamburger.style.display = 'block';
+             closeBtn.style.display = 'none';
+         });
+     
+         // Ensure correct visibility on window resize
+         window.addEventListener('resize', () => {
+             if (window.innerWidth > 428) {
+                 nav.classList.remove('active'); // Always show menu on larger screens
+                 hamburger.style.display = 'none';
+                 closeBtn.style.display = 'none';
+             } else {
+                 hamburger.style.display = 'block'; // Show hamburger on smaller screens
+                 closeBtn.style.display = 'none';
+             }
+         });
+     });
+     </script>
+
+
+
+
+
+
+
+
+
+
+<div class="heading">
+    <h1>PROJECTS!</h1>
+</div>
+<section id="border">
+<section id="projects">
+    <!-- Section for Project 1 (E-Commerce Website) -->
+    <div id="project1-section" class="project-section">
+        
+       
+        <div class="project1 reveal">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/VT7CJmxpagQ?si=4oLbi6174a7MoHRD" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <h2>Responsive E-Commerce Website</h2> 
+            <h5>Created on 10 / July / 2024</h5>
+            <button id="toggleButton1" onclick="showMore(1)">Show more </button>
+            <div id="project1-details" class="hidden">
+                <h2>HTML</h2>
+                <p>HTML is used to structure the content on the website. 
+                    This includes defining sections such as product listings, product details, shopping cart, and checkout forms.<br>
+                    Each product may have attributes like images, descriptions, prices, and add-to-cart buttons
+                    that are organized using HTML elements like divs, headings, tables, and forms.</p><br><br>
+                <h2>CSS</h2>
+                <p>CSS is used to style the website and create a visually appealing layout. It handles everything
+                    from color schemes and fonts to the layout of individual product cards.<br>
+                    Responsive design with CSS media queries ensures the e-commerce website looks great on different screen sizes, including mobile devices.<br>
+                    Interactive elements like hover effects, transitions, and animations make the user experience smoother and more engaging.</p><br><br> 
+                <h2>JavaScript</h2>
+                <p>JavaScript is responsible for adding dynamic functionality to the website. It powers features such as adding items to the cart, 
+                    calculating totals, and validating checkout forms.<br>
+                    It can also handle asynchronous tasks like retrieving product data from a server (using APIs) without reloading the page,<br>
+                    providing a seamless shopping experience.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section for Project 2 (Hotel Management System) -->
+    <div id="project2-section" class="project-section">
+        <div class="project1 reveal">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/WyL4bqfWCTY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <h2>Hotel Management System</h2>
+            <h5>Created on 22 / August / 2024</h5>
+            <button id="toggleButton2" onclick="showMore(2)">Show more</button>
+            <div id="project2-details" class="hidden">
+                <h2>Java Swing UI</h2>
+                <p>Swing is a part of Java's standard library used to create graphical user interfaces (GUIs). 
+                    In this hotel management system, Swing is employed to build windows, forms, buttons, menus, and other interactive elements.
+                    Various Swing components like JFrame, JPanel, JLabel, JButton, JTextField, and JTable are used to design different windows of the application.</p><br><br>
+                <h2>Back-end Concepts</h2>
+                <p> Object-Oriented Programming (OOP):
+                    The system follows the principles of OOP, with classes representing entities like Room, Customer, Reservation, and Invoice.
+                    Each class contains properties (fields) and behaviors (methods) to handle various hotel operations.</p><br><br>
+                <h2>MySQL Workbench</h2>
+                <p>The system uses file handling or databases (e.g., MySQL Workbench) to store persistent data such as customer information, 
+                    bookings, room details, and transaction histories. Java's JDBC (Java Database Connectivity) can be used to interact with a database, 
+                    allowing data to be fetched, updated, and managed efficiently.</p>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
+
+
+
+<script type="text/javascript">
+    // Show more/show less functionality for Project 1
+    function showMore(projectNumber) {
+        const projectDetails = document.getElementById(`project${projectNumber}-details`);
+        const button = document.getElementById(`toggleButton${projectNumber}`); // Get the button by dynamic ID
+
+        // Close all other project details (if any)
+        const allProjectDetails = document.querySelectorAll('[id^="project"][id$="-details"]');
+        allProjectDetails.forEach(details => {
+            if (details !== projectDetails) {
+                details.classList.add('hidden'); // Hide other project details
+            }
+        });
+
+        // Toggle the clicked project's details visibility
+        projectDetails.classList.toggle('hidden');
+
+        // Change button text based on visibility
+        if (projectDetails.classList.contains('hidden')) {
+            button.textContent = "Show more";  // Text when the details are hidden
+        } else {
+            button.textContent = "Show less";;  // Text when the details are visible
+        }
+    }
+</script>
+<script>
+// Scroll-triggered reveal animation
+function revealElements() {
+    const reveals = document.querySelectorAll('.reveal');
+    const windowHeight = window.innerHeight;
+    const revealPoint = 150; // Adjust to control the trigger point
+
+    reveals.forEach(reveal => {
+        const elementTop = reveal.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - revealPoint) {
+            reveal.classList.add('active');
+        } else {
+            reveal.classList.remove('active');
+        }
+    });
+}
+
+// Run animation on page load and scroll
+window.addEventListener('scroll', revealElements);
+window.addEventListener('DOMContentLoaded', revealElements); // Trigger on page load
+
+</script>
+
+<div class="p">
+    <p><-- All Rights Reserved @ Ajinkya-Dhumal --> <br>
+       <-- HTML - CSS - JAVASCRIPT -->
+    </p>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
